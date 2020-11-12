@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">MoBank</string>
+    <string name="title_activity_home">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_settings">Settings</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mpesa_text">M-Pesa</string>
+    <string name="equity_text">Equity</string>
+    <string name="kcb_text">KCB</string>
+    <string name="coop_text">Coop</string>
+
+    <string name="mpesa_transactions_text">Mpesa Transactions</string>
+    <string name="add_mpesa_transaction_text">Add Mpesa Transaction</string>
+    <string name="kcb_transactions_text">KCB Transactions</string>
+    <string name="add_kcb_trnsaction_text">Add KCB Transaction</string>
+    <string name="equity_transactions_text">Equity Transactions</string>
+    <string name="add_equity_transaction_text">Add Equity Transaction</string>
+    <string name="coop_transactions_text">COOP Transactions</string>
+    <string name="add_coop_transaction_text">Add COOP Transaction</string>
+
 </resources>
