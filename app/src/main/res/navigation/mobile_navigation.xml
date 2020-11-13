@@ -9,7 +9,7 @@
         android:id="@+id/navigation_home"
         android:name="ke.co.propscout.mobank.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_view_coop_transactions"
             app:destination="@id/coopTransactionsListFragment" />
@@ -38,8 +38,8 @@
     <fragment
         android:id="@+id/mpesaTransactionsListFragment"
         android:name="ke.co.propscout.mobank.ui.mpesa.MpesaTransactionsListFragment"
-        android:label="fragment_mpesa_transactions_list"
-        tools:layout="@layout/fragment_mpesa_transactions_list" >
+        android:label="@string/mpesa_transactions_text"
+        tools:layout="@layout/fragment_mpesa_transactions_list">
         <action
             android:id="@+id/action_add_mpesa_transaction"
             app:destination="@id/addMpesaTransactionFragment" />
@@ -47,8 +47,8 @@
     <fragment
         android:id="@+id/kcbTransactionsListFragment"
         android:name="ke.co.propscout.mobank.ui.kcb.KcbTransactionsListFragment"
-        android:label="fragment_kcb_transactions_list"
-        tools:layout="@layout/fragment_kcb_transactions_list" >
+        android:label="@string/kcb_transactions_text"
+        tools:layout="@layout/fragment_kcb_transactions_list">
         <action
             android:id="@+id/action_add_kcb_transaction"
             app:destination="@id/addKcbTransactionFragment" />
@@ -56,8 +56,8 @@
     <fragment
         android:id="@+id/equityTransactionsListFragment"
         android:name="ke.co.propscout.mobank.ui.equity.EquityTransactionsListFragment"
-        android:label="fragment_equity_transactions_list"
-        tools:layout="@layout/fragment_equity_transactions_list" >
+        android:label="@string/equity_transactions_text"
+        tools:layout="@layout/fragment_equity_transactions_list">
         <action
             android:id="@+id/action_add_equity_transation"
             app:destination="@id/addEquityTransactionFragment" />
@@ -65,8 +65,8 @@
     <fragment
         android:id="@+id/coopTransactionsListFragment"
         android:name="ke.co.propscout.mobank.ui.coop.CoopTransactionsListFragment"
-        android:label="fragment_coop_transactions_list"
-        tools:layout="@layout/fragment_coop_transactions_list" >
+        android:label="@string/coop_transactions_text"
+        tools:layout="@layout/fragment_coop_transactions_list">
         <action
             android:id="@+id/action_add_coop_transaction"
             app:destination="@id/addCoopTransactionFragment" />
@@ -74,21 +74,21 @@
     <fragment
         android:id="@+id/addEquityTransactionFragment"
         android:name="ke.co.propscout.mobank.ui.equity.AddEquityTransactionFragment"
-        android:label="fragment_add_equity_transaction"
+        android:label="@string/add_equity_transaction_text"
         tools:layout="@layout/fragment_add_equity_transaction" />
     <fragment
         android:id="@+id/addKcbTransactionFragment"
         android:name="ke.co.propscout.mobank.ui.kcb.AddKcbTransactionFragment"
-        android:label="fragment_add_kcb_transaction"
+        android:label="@string/add_kcb_trnsaction_text"
         tools:layout="@layout/fragment_add_kcb_transaction" />
     <fragment
         android:id="@+id/addCoopTransactionFragment"
         android:name="ke.co.propscout.mobank.ui.coop.AddCoopTransactionFragment"
-        android:label="fragment_add_coop_transaction"
+        android:label="@string/add_coop_transaction_text"
         tools:layout="@layout/fragment_add_coop_transaction" />
     <fragment
         android:id="@+id/addMpesaTransactionFragment"
         android:name="ke.co.propscout.mobank.ui.mpesa.AddMpesaTransactionFragment"
-        android:label="fragment_add_mpesa_transaction"
+        android:label="@string/add_mpesa_transaction_text"
         tools:layout="@layout/fragment_add_mpesa_transaction" />
 </navigation>
