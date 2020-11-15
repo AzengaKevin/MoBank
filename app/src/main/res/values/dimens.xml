@@ -3,5 +3,6 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="std_margin">16dp</dimen>
+    <dimen name="clear_separation_margin">24dp</dimen>
     <dimen name="fab_bottom_margin">80dp</dimen>
 </resources>

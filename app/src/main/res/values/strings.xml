@@ -20,4 +20,12 @@
     <string name="coop_transactions_text">COOP Transactions</string>
     <string name="add_coop_transaction_text">Add COOP Transaction</string>
 
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="sign_in_text">Sign In</string>
+    <string name="forgot_password_prompt">Forgot Password?</string>
+    <string name="phone_sign_in_text">Sign In With Phone</string>
+    <string name="account_quiz">Do you has an account?</string>
+    <string name="sign_up_text">Sign Up</string>
+
 </resources>
