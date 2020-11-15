@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "201778655873",
+    "firebase_url": "https://mobank-c1b6d.firebaseio.com",
+    "project_id": "mobank-c1b6d",
+    "storage_bucket": "mobank-c1b6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:201778655873:android:30d9820f57d978c5361380",
+        "android_client_info": {
+          "package_name": "ke.co.propscout.mobank"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "201778655873-48i20ci92jo22f09hllc9o6lhu6o657n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyzO8767EUiNK_QtmPXwhYbwR0Zq5w-XI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "201778655873-48i20ci92jo22f09hllc9o6lhu6o657n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
