@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment"
+    tools:viewBindingIgnore="true">
+
+    <Button
+        android:id="@+id/mpesa_btn"
+        android:layout_width="288dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/mpesa_text"
+        app:layout_constraintBottom_toTopOf="@+id/kcb_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/kcb_btn"
+        android:layout_width="288dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/std_margin"
+        android:text="@string/kcb_text"
+        app:layout_constraintBottom_toTopOf="@+id/equity_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mpesa_btn" />
+
+    <Button
+        android:id="@+id/equity_btn"
+        android:layout_width="288dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/std_margin"
+        android:text="@string/equity_text"
+        app:layout_constraintBottom_toTopOf="@+id/coop_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kcb_btn" />
+
+    <Button
+        android:id="@+id/coop_btn"
+        android:layout_width="288dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/std_margin"
+        android:text="@string/coop_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/equity_btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

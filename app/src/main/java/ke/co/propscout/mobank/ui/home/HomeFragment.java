@@ -32,19 +32,19 @@ public class HomeFragment extends Fragment {
 
         navController = Navigation.findNavController(view);
 
-        binding.mpesaBtn.setOnClickListener(
+        binding.mpesaCard.setOnClickListener(
                 v -> navController.navigate(R.id.action_view_mpesa_transactions)
         );
 
-        binding.kcbBtn.setOnClickListener(
+        binding.kcbCard.setOnClickListener(
                 v -> navController.navigate(R.id.action_view_kcb_transactions)
         );
 
-        binding.equityBtn.setOnClickListener(
+        binding.equityCard.setOnClickListener(
                 v -> navController.navigate(R.id.action_view_equity_transactions)
         );
 
-        binding.coopBtn.setOnClickListener(
+        binding.coopCard.setOnClickListener(
                 v -> navController.navigate(R.id.action_view_coop_transactions)
         );
     }
