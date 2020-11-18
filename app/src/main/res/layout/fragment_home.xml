@@ -10,7 +10,7 @@
         android:id="@+id/mpesa_btn"
         android:layout_width="288dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="32dp"
         android:text="@string/mpesa_text"
         app:layout_constraintBottom_toTopOf="@+id/kcb_btn"
         app:layout_constraintEnd_toEndOf="parent"

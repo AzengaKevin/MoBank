@@ -28,4 +28,7 @@
     <string name="account_quiz">Do you has an account?</string>
     <string name="sign_up_text">Sign Up</string>
 
+    <string name="sign_out_text">Sign Out</string>
+    <string name="change_password_text">Change Password</string>
+
 </resources>
