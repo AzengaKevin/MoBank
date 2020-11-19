@@ -23,7 +23,7 @@
             android:id="@+id/action_view_kcb_transactions"
             app:destination="@id/kcbTransactionsListFragment" />
         <action
-            android:id="@+id/action_navigation_home_to_airtelTransactionsListFragment"
+            android:id="@+id/action_view_airtel_transactions"
             app:destination="@id/airtelTransactionsListFragment" />
     </fragment>
 

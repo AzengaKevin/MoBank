@@ -40,6 +40,10 @@ public class HomeFragment extends Fragment {
                 v -> navController.navigate(R.id.action_view_kcb_transactions)
         );
 
+        binding.airtelCard.setOnClickListener(
+                v -> navController.navigate(R.id.action_view_airtel_transactions)
+        );
+
         binding.equityCard.setOnClickListener(
                 v -> navController.navigate(R.id.action_view_equity_transactions)
         );
