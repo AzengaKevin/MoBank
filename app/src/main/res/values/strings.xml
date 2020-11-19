@@ -34,8 +34,24 @@
     <string name="forgot_password_prompt">Forgot Password?</string>
     <string name="phone_sign_in_text">Sign In With Phone</string>
     <string name="account_quiz">Do you have an account?</string>
-    <string name="account_quiz_negavive">Already have an account?</string>
+    <string name="account_quiz_negative">Already have an account?</string>
 
     <string name="change_password_text">Change Password</string>
+
+    <string name="name_hint">Name</string>
+    <string name="phone_number_hint">Phone Number</string>
+    <string name="id_number_hint">ID Number</string>
+
+    <string name="customer_details_text">Customer Details</string>
+    <string name="account_details_text">Account Details</string>
+    <string name="transaction_details_text">Transaction Details</string>
+
+    <string name="account_number_hint">Account Number</string>
+    <string name="transaction_amount_hint">Transaction Amount</string>
+    <string name="transaction_id_hint">Transaction ID</string>
+
+    <string name="next_text">Next</string>
+    <string name="finish_text">Finish</string>
+
 
 </resources>

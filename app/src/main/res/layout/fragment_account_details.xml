@@ -6,18 +6,17 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="@dimen/std_margin"
-    tools:context=".ui.transactions.add.fragments.TransactionDetailsFragment">
+    tools:context=".ui.transactions.add.fragments.AccountDetailsFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="@dimen/std_padding"
-        android:text="@string/transaction_details_text"
+        android:gravity="center_horizontal"
+        android:text="@string/account_details_text"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
 
     <include
-        layout="@layout/new_transaction_layout"
+        layout="@layout/new_account_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/std_margin" />
@@ -27,6 +26,6 @@
         android:layout_width="288dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/std_margin"
-        android:text="@string/finish_text" />
+        android:text="@string/next_text" />
 
 </LinearLayout>

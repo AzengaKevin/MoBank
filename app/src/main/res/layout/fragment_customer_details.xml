@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="@dimen/std_margin"
-    tools:context=".ui.transactions.add.fragments.TransactionDetailsFragment">
+    tools:context=".ui.transactions.add.fragments.CustomerDetailsFragment">
 
     <TextView
+        android:id="@+id/customer_details_helper_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="@dimen/std_padding"
-        android:text="@string/transaction_details_text"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
+        android:text="@string/customer_details_text"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <include
-        layout="@layout/new_transaction_layout"
+        layout="@layout/new_customer_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/std_margin" />
@@ -27,6 +30,6 @@
         android:layout_width="288dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/std_margin"
-        android:text="@string/finish_text" />
+        android:text="@string/next_text" />
 
 </LinearLayout>

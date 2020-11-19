@@ -1,4 +1,4 @@
-package ke.co.propscout.mobank.ui.transactions.add.fragments;
+package ke.co.propscout.mobank.ui.transactions.add;
 
 import android.os.Bundle;
 
@@ -10,11 +10,10 @@ import android.view.ViewGroup;
 
 import ke.co.propscout.mobank.R;
 
-public class AccountDetailsFragment extends Fragment {
-
+public class AddTransactionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_account_details, container, false);
+        return inflater.inflate(R.layout.fragment_add_transaction, container, false);
     }
 }

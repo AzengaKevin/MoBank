@@ -102,7 +102,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/std_margin"
-        android:text="@string/account_quiz_negavive"
+        android:text="@string/account_quiz_negative"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
         app:layout_constraintEnd_toStartOf="@+id/sign_in_text_view"
         app:layout_constraintHorizontal_bias="0.5"
