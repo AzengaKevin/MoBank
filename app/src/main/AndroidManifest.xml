@@ -11,7 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoBank"
         tools:ignore="AllowBackup">
-        <activity android:name=".ui.auth.RegisterActivity"></activity>
+        <activity
+            android:name=".ui.auth.RegisterActivity"
+            android:theme="@style/Theme.MoBank.NoActionBar" />
         <activity
             android:name=".ui.HomeActivity"
             android:label="@string/title_activity_home" />
