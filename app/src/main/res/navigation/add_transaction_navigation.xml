@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/add_transaction_navigation"
+    app:startDestination="@id/customerDetailsFragment">
+
+    <fragment
+        android:id="@+id/customerDetailsFragment"
+        android:name="ke.co.propscout.mobank.ui.transactions.add.fragments.CustomerDetailsFragment"
+        android:label="fragment_customer_details"
+        tools:layout="@layout/fragment_customer_details" >
+        <action
+            android:id="@+id/action_add_account_details"
+            app:destination="@id/accountDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountDetailsFragment"
+        android:name="ke.co.propscout.mobank.ui.transactions.add.fragments.AccountDetailsFragment"
+        android:label="fragment_account_details"
+        tools:layout="@layout/fragment_account_details" >
+        <action
+            android:id="@+id/action_add_transaction_details"
+            app:destination="@id/transactionDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionDetailsFragment"
+        android:name="ke.co.propscout.mobank.ui.transactions.add.fragments.TransactionDetailsFragment"
+        android:label="fragment_transaction_details"
+        tools:layout="@layout/fragment_transaction_details" />
+</navigation>

@@ -11,20 +11,8 @@
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_view_coop_transactions"
-            app:destination="@id/coopTransactionsListFragment" />
-        <action
-            android:id="@+id/action_view_mpesa_transactions"
-            app:destination="@id/mpesaTransactionsListFragment" />
-        <action
-            android:id="@+id/action_view_equity_transactions"
-            app:destination="@id/equityTransactionsListFragment" />
-        <action
-            android:id="@+id/action_view_kcb_transactions"
-            app:destination="@id/kcbTransactionsListFragment" />
-        <action
-            android:id="@+id/action_view_airtel_transactions"
-            app:destination="@id/airtelTransactionsListFragment" />
+            android:id="@+id/action_view_transactions"
+            app:destination="@id/listTransactionsFragment" />
     </fragment>
 
     <fragment
@@ -39,73 +27,17 @@
         android:label="@string/title_settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
-        android:id="@+id/mpesaTransactionsListFragment"
-        android:name="ke.co.propscout.mobank.ui.mpesa.MpesaTransactionsListFragment"
-        android:label="@string/mpesa_transactions_text"
-        tools:layout="@layout/fragment_mpesa_transactions_list">
+        android:id="@+id/listTransactionsFragment"
+        android:name="ke.co.propscout.mobank.ui.transactions.list.ListTransactionsFragment"
+        android:label="fragment_list_transactions"
+        tools:layout="@layout/fragment_list_transactions" >
         <action
-            android:id="@+id/action_add_mpesa_transaction"
-            app:destination="@id/addMpesaTransactionFragment" />
+            android:id="@+id/action_add_transaction"
+            app:destination="@id/addTransactionFragment" />
     </fragment>
     <fragment
-        android:id="@+id/kcbTransactionsListFragment"
-        android:name="ke.co.propscout.mobank.ui.kcb.KcbTransactionsListFragment"
-        android:label="@string/kcb_transactions_text"
-        tools:layout="@layout/fragment_kcb_transactions_list">
-        <action
-            android:id="@+id/action_add_kcb_transaction"
-            app:destination="@id/addKcbTransactionFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/equityTransactionsListFragment"
-        android:name="ke.co.propscout.mobank.ui.equity.EquityTransactionsListFragment"
-        android:label="@string/equity_transactions_text"
-        tools:layout="@layout/fragment_equity_transactions_list">
-        <action
-            android:id="@+id/action_add_equity_transation"
-            app:destination="@id/addEquityTransactionFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/coopTransactionsListFragment"
-        android:name="ke.co.propscout.mobank.ui.coop.CoopTransactionsListFragment"
-        android:label="@string/coop_transactions_text"
-        tools:layout="@layout/fragment_coop_transactions_list">
-        <action
-            android:id="@+id/action_add_coop_transaction"
-            app:destination="@id/addCoopTransactionFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/addEquityTransactionFragment"
-        android:name="ke.co.propscout.mobank.ui.equity.AddEquityTransactionFragment"
-        android:label="@string/add_equity_transaction_text"
-        tools:layout="@layout/fragment_add_equity_transaction" />
-    <fragment
-        android:id="@+id/addKcbTransactionFragment"
-        android:name="ke.co.propscout.mobank.ui.kcb.AddKcbTransactionFragment"
-        android:label="@string/add_kcb_trnsaction_text"
-        tools:layout="@layout/fragment_add_kcb_transaction" />
-    <fragment
-        android:id="@+id/addCoopTransactionFragment"
-        android:name="ke.co.propscout.mobank.ui.coop.AddCoopTransactionFragment"
-        android:label="@string/add_coop_transaction_text"
-        tools:layout="@layout/fragment_add_coop_transaction" />
-    <fragment
-        android:id="@+id/addMpesaTransactionFragment"
-        android:name="ke.co.propscout.mobank.ui.mpesa.AddMpesaTransactionFragment"
-        android:label="@string/add_mpesa_transaction_text"
-        tools:layout="@layout/fragment_add_mpesa_transaction" />
-    <fragment
-        android:id="@+id/airtelTransactionsListFragment"
-        android:name="ke.co.propscout.mobank.ui.airtel.AirtelTransactionsListFragment"
-        android:label="@string/airtel_transactions_text"
-        tools:layout="@layout/fragment_airtel_transactions_list">
-        <action
-            android:id="@+id/action_add_airtel_transaction"
-            app:destination="@id/addAirtelTransactionFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/addAirtelTransactionFragment"
-        android:name="ke.co.propscout.mobank.ui.airtel.AddAirtelTransactionFragment"
-        android:label="@string/add_airtel_transaction_text"
-        tools:layout="@layout/fragment_add_airtel_transaction" />
+        android:id="@+id/addTransactionFragment"
+        android:name="ke.co.propscout.mobank.ui.transactions.add.AddTransactionFragment"
+        android:label="fragment_add_transaction"
+        tools:layout="@layout/fragment_add_transaction" />
 </navigation>

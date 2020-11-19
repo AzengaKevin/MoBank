@@ -33,23 +33,23 @@ public class HomeFragment extends Fragment {
         navController = Navigation.findNavController(view);
 
         binding.mpesaCard.setOnClickListener(
-                v -> navController.navigate(R.id.action_view_mpesa_transactions)
+                v -> navController.navigate(R.id.action_view_transactions)
         );
 
         binding.kcbCard.setOnClickListener(
-                v -> navController.navigate(R.id.action_view_kcb_transactions)
+                v -> navController.navigate(R.id.action_view_transactions)
         );
 
         binding.airtelCard.setOnClickListener(
-                v -> navController.navigate(R.id.action_view_airtel_transactions)
+                v -> navController.navigate(R.id.action_view_transactions)
         );
 
         binding.equityCard.setOnClickListener(
-                v -> navController.navigate(R.id.action_view_equity_transactions)
+                v -> navController.navigate(R.id.action_view_transactions)
         );
 
         binding.coopCard.setOnClickListener(
-                v -> navController.navigate(R.id.action_view_coop_transactions)
+                v -> navController.navigate(R.id.action_view_transactions)
         );
     }
 }

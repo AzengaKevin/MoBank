@@ -13,8 +13,10 @@
     <string name="coop_text">Coop</string>
 
     <string name="mpesa_transactions_text">Mpesa Transactions</string>
+    <string name="transactions_text">Transactions</string>
     <string name="airtel_transactions_text">Airtel Transactions</string>
     <string name="add_mpesa_transaction_text">Add Mpesa Transaction</string>
+    <string name="add_transaction_text">Add Transaction</string>
     <string name="add_airtel_transaction_text">Add Aitel Transaction</string>
     <string name="kcb_transactions_text">KCB Transactions</string>
     <string name="add_kcb_trnsaction_text">Add KCB Transaction</string>
@@ -52,6 +54,8 @@
 
     <string name="next_text">Next</string>
     <string name="finish_text">Finish</string>
+
+    <string name="add_icon_text">Add Icon</string>
 
 
 </resources>
