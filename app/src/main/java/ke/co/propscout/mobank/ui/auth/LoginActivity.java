@@ -59,6 +59,8 @@ public class LoginActivity extends AppCompatActivity {
             loginUser(email, password);
 
         });
+
+        binding.signUpTextView.setOnClickListener(v -> startActivity(new Intent(this, RegisterActivity.class)));
     }
 
     private void loginUser(String email, String password) {

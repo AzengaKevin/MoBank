@@ -25,6 +25,7 @@
 
     <string name="email_hint">Email</string>
     <string name="password_hint">Password</string>
+    <string name="confirm_password_hint">Confirm Password</string>
 
     <string name="sign_in_text">Sign In</string>
     <string name="sign_up_text">Sign Up</string>
@@ -32,7 +33,8 @@
 
     <string name="forgot_password_prompt">Forgot Password?</string>
     <string name="phone_sign_in_text">Sign In With Phone</string>
-    <string name="account_quiz">Do you has an account?</string>
+    <string name="account_quiz">Do you have an account?</string>
+    <string name="account_quiz_negavive">Already have an account?</string>
 
     <string name="change_password_text">Change Password</string>
 
