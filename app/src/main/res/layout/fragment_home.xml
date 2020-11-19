@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".ui.home.HomeFragment">
 
     <GridLayout
@@ -11,8 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:columnCount="2"
-        android:rowCount="2"
-        android:layout_marginTop="32dp"
+        android:rowCount="3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -21,7 +21,8 @@
             android:id="@+id/mpesa_card"
             android:layout_width="0dp"
             android:layout_height="@dimen/home_cards_height"
-            android:layout_columnWeight="1">
+            android:layout_columnWeight="1"
+            app:cardElevation="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -35,13 +36,6 @@
                     android:layout_height="@dimen/home_cards_image_size"
                     android:contentDescription="@string/mpesa_text"
                     android:src="@mipmap/mpesa" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/std_margin"
-                    android:text="@string/mpesa_text"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -49,7 +43,8 @@
             android:id="@+id/kcb_card"
             android:layout_width="0dp"
             android:layout_height="@dimen/home_cards_height"
-            android:layout_columnWeight="1">
+            android:layout_columnWeight="1"
+            app:cardElevation="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -63,13 +58,28 @@
                     android:layout_height="@dimen/home_cards_image_size"
                     android:contentDescription="@string/kcb_text"
                     android:src="@mipmap/kcb" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/std_margin"
-                    android:text="@string/kcb_text"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/airtel_card"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/home_cards_height"
+            android:layout_columnWeight="1"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/std_padding">
+
+                <ImageView
+                    android:layout_width="@dimen/home_cards_image_size"
+                    android:layout_height="@dimen/home_cards_image_size"
+                    android:contentDescription="@string/airtel_text"
+                    android:src="@mipmap/airtel" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -77,7 +87,8 @@
             android:id="@+id/equity_card"
             android:layout_width="0dp"
             android:layout_height="@dimen/home_cards_height"
-            android:layout_columnWeight="1">
+            android:layout_columnWeight="1"
+            app:cardElevation="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -91,13 +102,6 @@
                     android:layout_height="@dimen/home_cards_image_size"
                     android:contentDescription="@string/equity_text"
                     android:src="@mipmap/equity" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/std_margin"
-                    android:text="@string/equity_text"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -105,7 +109,8 @@
             android:id="@+id/coop_card"
             android:layout_width="0dp"
             android:layout_height="@dimen/home_cards_height"
-            android:layout_columnWeight="1">
+            android:layout_columnWeight="1"
+            app:cardElevation="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -119,13 +124,6 @@
                     android:layout_height="@dimen/home_cards_image_size"
                     android:contentDescription="@string/coop_text"
                     android:src="@mipmap/coop" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/std_margin"
-                    android:text="@string/coop_text"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

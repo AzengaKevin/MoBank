@@ -5,7 +5,7 @@
     <dimen name="std_margin">16dp</dimen>
     <dimen name="clear_separation_margin">24dp</dimen>
     <dimen name="fab_bottom_margin">80dp</dimen>
-    <dimen name="home_cards_height">160dp</dimen>
+    <dimen name="home_cards_height">112dp</dimen>
     <dimen name="home_cards_image_size">72dp</dimen>
-    <dimen name="std_padding">12dp</dimen>
+    <dimen name="std_padding">8dp</dimen>
 </resources>

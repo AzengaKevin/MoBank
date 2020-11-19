@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_view_kcb_transactions"
             app:destination="@id/kcbTransactionsListFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_airtelTransactionsListFragment"
+            app:destination="@id/airtelTransactionsListFragment" />
     </fragment>
 
     <fragment
@@ -91,4 +94,18 @@
         android:name="ke.co.propscout.mobank.ui.mpesa.AddMpesaTransactionFragment"
         android:label="@string/add_mpesa_transaction_text"
         tools:layout="@layout/fragment_add_mpesa_transaction" />
+    <fragment
+        android:id="@+id/airtelTransactionsListFragment"
+        android:name="ke.co.propscout.mobank.ui.airtel.AirtelTransactionsListFragment"
+        android:label="@string/airtel_transactions_text"
+        tools:layout="@layout/fragment_airtel_transactions_list">
+        <action
+            android:id="@+id/action_add_airtel_transaction"
+            app:destination="@id/addAirtelTransactionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAirtelTransactionFragment"
+        android:name="ke.co.propscout.mobank.ui.airtel.AddAirtelTransactionFragment"
+        android:label="@string/add_airtel_transaction_text"
+        tools:layout="@layout/fragment_add_airtel_transaction" />
 </navigation>
