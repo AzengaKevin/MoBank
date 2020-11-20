@@ -51,11 +51,14 @@
     <string name="account_number_hint">Account Number</string>
     <string name="transaction_amount_hint">Transaction Amount</string>
     <string name="transaction_id_hint">Transaction ID</string>
+    <string name="transaction_description_hint">Transaction Description</string>
 
     <string name="next_text">Next</string>
     <string name="finish_text">Finish</string>
 
     <string name="add_icon_text">Add Icon</string>
 
+    <string name="deposit_text">Deposit</string>
+    <string name="withdraw_text">Withdraw</string>
 
 </resources>

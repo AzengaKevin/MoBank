@@ -4,14 +4,40 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <RadioGroup
+        android:id="@+id/transaction_type_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/deposit_radio_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/deposit_text" />
+
+        <RadioButton
+            android:id="@+id/withdraw_radio_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/withdraw_text" />
+
+    </RadioGroup>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/transaction_amount_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/std_margin"
         android:hint="@string/transaction_amount_hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/transaction_type_radio_group">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/transaction_amount_field"
@@ -38,6 +64,27 @@
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/transaction_description_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/std_margin"
+        android:hint="@string/transaction_description_hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transaction_id_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/transaction_description_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:inputType="textMultiLine"
+            android:minLines="3" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
