@@ -12,19 +12,23 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import ke.co.propscout.mobank.R;
+import ke.co.propscout.mobank.data.models.Platform;
 import ke.co.propscout.mobank.data.models.User;
 import ke.co.propscout.mobank.databinding.FragmentAccountDetailsBinding;
 
 public class AccountDetailsFragment extends Fragment {
+    private static final String TAG = "AccountDetailsFragment";
 
     private FragmentAccountDetailsBinding binding;
     private NavController navController;
 
     private User currentUser = null;
+    private Platform platform;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override

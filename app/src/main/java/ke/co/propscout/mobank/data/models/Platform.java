@@ -1,5 +1,7 @@
 package ke.co.propscout.mobank.data.models;
 
-public enum Platform {
+import java.io.Serializable;
+
+public enum Platform implements Serializable {
     Mpesa, Airtel, Equity, KCB, Coop
 }

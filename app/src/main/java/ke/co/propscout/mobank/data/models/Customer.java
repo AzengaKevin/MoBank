@@ -3,9 +3,10 @@ package ke.co.propscout.mobank.data.models;
 import com.google.firebase.firestore.DocumentId;
 import com.google.firebase.firestore.Exclude;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Customer extends CustomerWithOwner {
+public class Customer extends CustomerWithOwner implements Serializable {
 
     @Exclude
     public static final String COLLECTION_NAME = "customers";

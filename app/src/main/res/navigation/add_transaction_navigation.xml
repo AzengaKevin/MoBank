@@ -22,10 +22,20 @@
         <action
             android:id="@+id/action_add_transaction_details"
             app:destination="@id/transactionDetailsFragment" />
+        <argument
+            android:name="platform"
+            app:argType="ke.co.propscout.mobank.data.models.Platform" />
+        <argument
+            android:name="customer"
+            app:argType="ke.co.propscout.mobank.data.models.Customer" />
     </fragment>
     <fragment
         android:id="@+id/transactionDetailsFragment"
         android:name="ke.co.propscout.mobank.ui.transactions.add.fragments.TransactionDetailsFragment"
         android:label="fragment_transaction_details"
-        tools:layout="@layout/fragment_transaction_details" />
+        tools:layout="@layout/fragment_transaction_details" >
+        <argument
+            android:name="account"
+            app:argType="ke.co.propscout.mobank.data.models.Account" />
+    </fragment>
 </navigation>

@@ -1,24 +1,31 @@
 package ke.co.propscout.mobank.data.models;
 
 import com.google.firebase.firestore.DocumentId;
+import com.google.firebase.firestore.Exclude;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Account {
+public class Account implements Serializable {
+    @Exclude
     public static final String COLLECTION_NAME = "accounts";
+    @Exclude
+    public static final String ACCOUNT_TYPE_ARG = "platform";
 
     @DocumentId
     private String id;
     private String accountNumber;
+    private String customerId;
     private String type;
     private List<Transaction> transactions;
 
     public Account() {
     }
 
-    public Account(String accountNumber, String type) {
+    public Account(String accountNumber, String type, String customerId) {
         this.accountNumber = accountNumber;
         this.type = type;
+        this.customerId = customerId;
     }
 
     public String getId() {

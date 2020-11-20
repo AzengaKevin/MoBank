@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import ke.co.propscout.mobank.R;
+import ke.co.propscout.mobank.data.models.Platform;
 import ke.co.propscout.mobank.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
@@ -32,24 +32,15 @@ public class HomeFragment extends Fragment {
 
         navController = Navigation.findNavController(view);
 
-        binding.mpesaCard.setOnClickListener(
-                v -> navController.navigate(R.id.action_view_transactions)
-        );
+        binding.mpesaCard.setOnClickListener(v -> viewTransactions(Platform.Mpesa));
+        binding.kcbCard.setOnClickListener(v -> viewTransactions(Platform.KCB));
+        binding.airtelCard.setOnClickListener(v -> viewTransactions(Platform.Airtel));
+        binding.equityCard.setOnClickListener(v -> viewTransactions(Platform.Equity));
+        binding.coopCard.setOnClickListener(v -> viewTransactions(Platform.Coop));
+    }
 
-        binding.kcbCard.setOnClickListener(
-                v -> navController.navigate(R.id.action_view_transactions)
-        );
-
-        binding.airtelCard.setOnClickListener(
-                v -> navController.navigate(R.id.action_view_transactions)
-        );
-
-        binding.equityCard.setOnClickListener(
-                v -> navController.navigate(R.id.action_view_transactions)
-        );
-
-        binding.coopCard.setOnClickListener(
-                v -> navController.navigate(R.id.action_view_transactions)
-        );
+    private void viewTransactions(Platform platform) {
+        HomeFragmentDirections.ActionViewTransactions actionViewTransactions = HomeFragmentDirections.actionViewTransactions(platform);
+        navController.navigate(actionViewTransactions);
     }
 }
