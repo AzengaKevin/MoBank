@@ -5,18 +5,20 @@ import com.google.firebase.firestore.DocumentId;
 import java.util.List;
 
 public class Account {
+    public static final String COLLECTION_NAME = "accounts";
 
     @DocumentId
     private String id;
     private String accountNumber;
+    private String type;
     private List<Transaction> transactions;
 
     public Account() {
     }
 
-    public Account(String accountNumber, List<Transaction> transactions) {
+    public Account(String accountNumber, String type) {
         this.accountNumber = accountNumber;
-        this.transactions = transactions;
+        this.type = type;
     }
 
     public String getId() {
@@ -37,6 +39,14 @@ public class Account {
 
     public List<Transaction> getTransactions() {
         return transactions;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public void setTransactions(List<Transaction> transactions) {

@@ -1,10 +1,14 @@
 package ke.co.propscout.mobank.data.models;
 
 import com.google.firebase.firestore.DocumentId;
+import com.google.firebase.firestore.Exclude;
 
 import java.util.List;
 
-public class Customer {
+public class Customer extends CustomerWithOwner {
+
+    @Exclude
+    public static final String COLLECTION_NAME = "customers";
 
     @DocumentId
     private String id;
@@ -62,4 +66,6 @@ public class Customer {
     public void setAccounts(List<Account> accounts) {
         this.accounts = accounts;
     }
+
+
 }

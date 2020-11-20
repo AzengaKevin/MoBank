@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/customerDetailsFragment"
-        android:name="ke.co.propscout.mobank.ui.transactions.add.fragments.CustomerDetailsFragment"
+        android:name="ke.co.propscout.mobank.ui.transactions.add.fragments.customer.CustomerDetailsFragment"
         android:label="fragment_customer_details"
         tools:layout="@layout/fragment_customer_details" >
         <action

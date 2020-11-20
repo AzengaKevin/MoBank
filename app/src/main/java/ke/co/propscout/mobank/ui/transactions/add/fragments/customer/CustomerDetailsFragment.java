@@ -1,4 +1,4 @@
-package ke.co.propscout.mobank.ui.transactions.add.fragments;
+package ke.co.propscout.mobank.ui.transactions.add.fragments.customer;
 
 import android.os.Bundle;
 
@@ -12,6 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import ke.co.propscout.mobank.R;
 import ke.co.propscout.mobank.databinding.FragmentCustomerDetailsBinding;
 
@@ -19,6 +22,14 @@ public class CustomerDetailsFragment extends Fragment {
 
     private FragmentCustomerDetailsBinding binding;
     private NavController navController;
+
+    private FirebaseAuth firebaseAuth;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        firebaseAuth = FirebaseAuth.getInstance();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
