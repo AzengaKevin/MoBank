@@ -61,4 +61,6 @@
     <string name="deposit_text">Deposit</string>
     <string name="withdraw_text">Withdraw</string>
 
+    <string name="warning_text">Something not right</string>
+
 </resources>

@@ -1,13 +1,15 @@
 package ke.co.propscout.mobank.data.models;
 
 import com.google.firebase.firestore.DocumentId;
+import com.google.firebase.firestore.Exclude;
 
 public class User {
+    @Exclude
+    public static final String COLLECTION_NAME = "users";
 
     @DocumentId
     private String uid;
 
-    private String name;
     private String phoneNumber;
     private String photoUrl;
     private String email;
@@ -16,8 +18,7 @@ public class User {
     public User() {
     }
 
-    public User(String name, String phoneNumber, String photoUrl, String email, String displayName) {
-        this.name = name;
+    public User(String phoneNumber, String photoUrl, String email, String displayName) {
         this.phoneNumber = phoneNumber;
         this.photoUrl = photoUrl;
         this.email = email;
@@ -30,14 +31,6 @@ public class User {
 
     public void setUid(String uid) {
         this.uid = uid;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getPhoneNumber() {
