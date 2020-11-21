@@ -1,5 +1,6 @@
 package ke.co.propscout.mobank.ui.transactions.add.fragments.customer;
 
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -26,6 +27,14 @@ public class CustomerViewModel extends ViewModel implements CustomerRepository.C
     public void createCustomer(Customer customer) {
         customer.withOwnerId(uid);
         customerRepository.createCustomer(customer);
+    }
+
+    public LiveData<Customer> getCustomer() {
+        return _customer;
+    }
+
+    public LiveData<Exception> getException() {
+        return _exception;
     }
 
     @Override

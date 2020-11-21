@@ -17,6 +17,8 @@ public class Customer extends CustomerWithOwner implements Serializable {
     private String name;
     private String phone;
     private String idNumber;
+
+    @Exclude
     private List<Account> accounts;
 
     public Customer() {

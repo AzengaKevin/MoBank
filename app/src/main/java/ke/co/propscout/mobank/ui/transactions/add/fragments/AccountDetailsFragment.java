@@ -11,7 +11,11 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 import ke.co.propscout.mobank.R;
+import ke.co.propscout.mobank.data.models.Account;
+import ke.co.propscout.mobank.data.models.Customer;
 import ke.co.propscout.mobank.data.models.Platform;
 import ke.co.propscout.mobank.data.models.User;
 import ke.co.propscout.mobank.databinding.FragmentAccountDetailsBinding;
@@ -22,13 +26,18 @@ public class AccountDetailsFragment extends Fragment {
     private FragmentAccountDetailsBinding binding;
     private NavController navController;
 
-    private User currentUser = null;
     private Platform platform;
+    private Customer customer;
+    private TextInputEditText accountNumberField;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //Get customer
+        customer = AccountDetailsFragmentArgs.fromBundle(requireArguments()).getCustomer();
+        //Get platform
+        platform = AccountDetailsFragmentArgs.fromBundle(requireArguments()).getPlatform();
     }
 
     @Override
@@ -41,10 +50,16 @@ public class AccountDetailsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        accountNumberField = view.findViewById(R.id.account_number_field);
 
         navController = Navigation.findNavController(view);
 
         binding.nextButton.setOnClickListener(v -> {
+            //Get account number
+            String accountNumber = String.valueOf(accountNumberField.getText());
+
+            Account account = new Account(accountNumber, platform.toString(), customer.getId());
+
             //Navigate to get the transactions
             navController.navigate(R.id.action_add_transaction_details);
         });

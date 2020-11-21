@@ -7,15 +7,19 @@ import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.Objects;
 
 import ke.co.propscout.mobank.R;
 import ke.co.propscout.mobank.data.models.Account;
@@ -27,6 +31,7 @@ public class CustomerDetailsFragment extends Fragment {
     private static final String TAG = "CustomerDetailsFragment";
 
     private FragmentCustomerDetailsBinding binding;
+    private CustomerViewModel viewModel;
     private NavController navController;
     private Platform platform;
 
@@ -59,6 +64,9 @@ public class CustomerDetailsFragment extends Fragment {
 
         navController = Navigation.findNavController(view);
 
+        CustomerViewModelFactory factory = new CustomerViewModelFactory(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid());
+        viewModel = new ViewModelProvider(this, factory).get(CustomerViewModel.class);
+
         customerNameField = view.findViewById(R.id.customer_name_field);
         customerPhoneField = view.findViewById(R.id.customer_phone_field);
         customerIdNumberField = view.findViewById(R.id.customer_id_number_field);
@@ -84,11 +92,21 @@ public class CustomerDetailsFragment extends Fragment {
 
             Customer customer = new Customer(name, phone, idNumber);
 
+            viewModel.createCustomer(customer);
+        });
+
+        viewModel.getCustomer().observe(getViewLifecycleOwner(), customer -> {
+
             CustomerDetailsFragmentDirections.ActionAddAccountDetails actionAddAccountDetails
                     = CustomerDetailsFragmentDirections.actionAddAccountDetails(platform, customer);
 
             //Get the account number
             navController.navigate(actionAddAccountDetails);
+        });
+
+        viewModel.getException().observe(getViewLifecycleOwner(), exception -> {
+            Log.e(TAG, "onViewCreated: ", exception);
+            Toast.makeText(getContext(), getString(R.string.warning_text), Toast.LENGTH_SHORT).show();
         });
     }
 }
