@@ -89,4 +89,12 @@ public class RegisterActivity extends AppCompatActivity {
         startActivity(new Intent(this, HomeActivity.class));
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        if (firebaseAuth.getCurrentUser() != null) {
+            sendHome();
+        }
+    }
 }

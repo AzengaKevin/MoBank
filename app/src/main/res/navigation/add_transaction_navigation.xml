@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/transactionDetailsFragment"
-        android:name="ke.co.propscout.mobank.ui.transactions.add.fragments.TransactionDetailsFragment"
+        android:name="ke.co.propscout.mobank.ui.transactions.add.fragments.transaction.TransactionDetailsFragment"
         android:label="fragment_transaction_details"
         tools:layout="@layout/fragment_transaction_details" >
         <argument

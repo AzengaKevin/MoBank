@@ -4,6 +4,8 @@ import com.google.firebase.firestore.DocumentId;
 import com.google.firebase.firestore.Exclude;
 
 public class Transaction {
+    @Exclude
+    public static final String COLLECTION_NAME = "transactions";
 
     @DocumentId
     private String id;

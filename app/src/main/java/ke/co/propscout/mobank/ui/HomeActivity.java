@@ -58,18 +58,15 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void setUpDestinationChangeListener() {
-        navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
-            @Override
-            public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
-                if (destination.getId() == R.id.addTransactionFragment || destination.getId() == R.id.listTransactionsFragment) {
-                    if (navView != null) {
-                        navView.setVisibility(View.GONE);
-                    }
-                } else {
-                    if (navView != null) {
-                        if (navView.getVisibility() != View.VISIBLE)
-                            navView.setVisibility(View.VISIBLE);
-                    }
+        navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
+            if (destination.getId() == R.id.addTransactionFragment || destination.getId() == R.id.listTransactionsFragment) {
+                if (navView != null) {
+                    navView.setVisibility(View.GONE);
+                }
+            } else {
+                if (navView != null) {
+                    if (navView.getVisibility() != View.VISIBLE)
+                        navView.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -121,7 +118,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private void sendToLogin() {
         Intent launchLoginActivity = new Intent(this, LoginActivity.class);
-        launchLoginActivity.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        launchLoginActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(launchLoginActivity);
     }
 

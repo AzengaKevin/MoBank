@@ -10,7 +10,7 @@
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:padding="@dimen/std_margin"
-        tools:context=".ui.transactions.add.fragments.TransactionDetailsFragment">
+        tools:context=".ui.transactions.add.fragments.transaction.TransactionDetailsFragment">
 
         <TextView
             android:layout_width="match_parent"

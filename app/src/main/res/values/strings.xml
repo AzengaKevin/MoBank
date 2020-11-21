@@ -62,5 +62,8 @@
     <string name="withdraw_text">Withdraw</string>
 
     <string name="warning_text">Something not right</string>
+    <string name="transaction_type_error">Please setect a transaction type</string>
+    <string name="transaction_amount_error">Invalid transaction amount, it must be a number</string>
+    <string name="transaction_id_error">Transaction ID Field is Required</string>
 
 </resources>
