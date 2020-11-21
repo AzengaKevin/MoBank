@@ -17,12 +17,14 @@ import android.view.ViewGroup;
 import ke.co.propscout.mobank.R;
 import ke.co.propscout.mobank.data.models.Account;
 import ke.co.propscout.mobank.data.models.Platform;
+import ke.co.propscout.mobank.databinding.FragmentAddTransactionBinding;
 
 public class AddTransactionFragment extends Fragment {
     private static final String TAG = "AddTransactionFragment";
 
     private Platform platform;
     private NavController navController;
+    private FragmentAddTransactionBinding binding;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,7 +37,8 @@ public class AddTransactionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_add_transaction, container, false);
+        binding = FragmentAddTransactionBinding.inflate(inflater, container, false);
+        return binding.getRoot();
     }
 
     @Override
@@ -50,7 +53,7 @@ public class AddTransactionFragment extends Fragment {
         //Set subtitle on the action bar
         activity.getSupportActionBar().setSubtitle(platform.toString());
 
-        navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment);
+        navController = Navigation.findNavController(getActivity(), R.id.fragment);
         Bundle args = new Bundle();
         args.putSerializable(Account.ACCOUNT_TYPE_ARG, platform);
         navController.setGraph(R.navigation.add_transaction_navigation, args);
