@@ -1,6 +1,7 @@
 package ke.co.propscout.mobank.data.models;
 
 import com.google.firebase.firestore.DocumentId;
+import com.google.firebase.firestore.Exclude;
 
 public class Transaction {
 
@@ -11,6 +12,8 @@ public class Transaction {
     private double amount;
     private String transactionId;
     private String description;
+
+    private Account account;
 
     public Transaction() {
     }
@@ -60,5 +63,14 @@ public class Transaction {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Exclude
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
     }
 }

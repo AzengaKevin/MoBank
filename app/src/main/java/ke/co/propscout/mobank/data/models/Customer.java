@@ -18,7 +18,6 @@ public class Customer extends CustomerWithOwner implements Serializable {
     private String phone;
     private String idNumber;
 
-    @Exclude
     private List<Account> accounts;
 
     public Customer() {
@@ -62,6 +61,7 @@ public class Customer extends CustomerWithOwner implements Serializable {
         this.idNumber = idNumber;
     }
 
+    @Exclude
     public List<Account> getAccounts() {
         return accounts;
     }

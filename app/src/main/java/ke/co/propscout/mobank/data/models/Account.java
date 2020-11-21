@@ -18,10 +18,8 @@ public class Account implements Serializable {
     private String customerId;
     private String type;
 
-    @Exclude
     private List<Transaction> transactions;
 
-    @Exclude
     private Customer customer;
 
     public Account() {
@@ -49,6 +47,7 @@ public class Account implements Serializable {
         this.accountNumber = accountNumber;
     }
 
+    @Exclude
     public List<Transaction> getTransactions() {
         return transactions;
     }
@@ -73,6 +72,7 @@ public class Account implements Serializable {
         this.customerId = customerId;
     }
 
+    @Exclude
     public Customer getCustomer() {
         return customer;
     }
