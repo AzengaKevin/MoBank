@@ -17,7 +17,12 @@ public class Account implements Serializable {
     private String accountNumber;
     private String customerId;
     private String type;
+
+    @Exclude
     private List<Transaction> transactions;
+
+    @Exclude
+    private Customer customer;
 
     public Account() {
     }
@@ -58,5 +63,21 @@ public class Account implements Serializable {
 
     public void setTransactions(List<Transaction> transactions) {
         this.transactions = transactions;
+    }
+
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }

@@ -8,18 +8,31 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
 import ke.co.propscout.mobank.R;
+import ke.co.propscout.mobank.data.models.Account;
 import ke.co.propscout.mobank.databinding.FragmentTransactionDetailsBinding;
 
 public class TransactionDetailsFragment extends Fragment {
+    private static final String TAG = "TransactionDetailsFrag";
 
     private FragmentTransactionDetailsBinding binding;
     private NavController navController;
+    private Account account;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        account = TransactionDetailsFragmentArgs.fromBundle(requireArguments()).getAccount();
+
+        Log.i(TAG, "onCreate: account = " + account.getAccountNumber());
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

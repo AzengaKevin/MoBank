@@ -64,9 +64,6 @@ public class CustomerDetailsFragment extends Fragment {
 
         navController = Navigation.findNavController(view);
 
-        CustomerViewModelFactory factory = new CustomerViewModelFactory(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid());
-        viewModel = new ViewModelProvider(this, factory).get(CustomerViewModel.class);
-
         customerNameField = view.findViewById(R.id.customer_name_field);
         customerPhoneField = view.findViewById(R.id.customer_phone_field);
         customerIdNumberField = view.findViewById(R.id.customer_id_number_field);
@@ -94,6 +91,15 @@ public class CustomerDetailsFragment extends Fragment {
 
             viewModel.createCustomer(customer);
         });
+
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        CustomerViewModelFactory factory = new CustomerViewModelFactory(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid());
+        viewModel = new ViewModelProvider(this, factory).get(CustomerViewModel.class);
 
         viewModel.getCustomer().observe(getViewLifecycleOwner(), customer -> {
 

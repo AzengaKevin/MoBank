@@ -1,13 +1,16 @@
-package ke.co.propscout.mobank.ui.transactions.add.fragments;
+package ke.co.propscout.mobank.ui.transactions.add.fragments.account;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -17,13 +20,13 @@ import ke.co.propscout.mobank.R;
 import ke.co.propscout.mobank.data.models.Account;
 import ke.co.propscout.mobank.data.models.Customer;
 import ke.co.propscout.mobank.data.models.Platform;
-import ke.co.propscout.mobank.data.models.User;
 import ke.co.propscout.mobank.databinding.FragmentAccountDetailsBinding;
 
 public class AccountDetailsFragment extends Fragment {
     private static final String TAG = "AccountDetailsFragment";
 
     private FragmentAccountDetailsBinding binding;
+    private AccountViewModel accountViewModel;
     private NavController navController;
 
     private Platform platform;
@@ -60,8 +63,32 @@ public class AccountDetailsFragment extends Fragment {
 
             Account account = new Account(accountNumber, platform.toString(), customer.getId());
 
-            //Navigate to get the transactions
-            navController.navigate(R.id.action_add_transaction_details);
+            account.setCustomer(customer);
+
+            accountViewModel.createAccount(account);
+
+        });
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        AccountViewModelFactory factory = new AccountViewModelFactory(platform, customer);
+
+        accountViewModel = new ViewModelProvider(this, factory).get(AccountViewModel.class);
+
+        accountViewModel.getAccount().observe(getViewLifecycleOwner(), account -> {
+            //Send to transactions
+            AccountDetailsFragmentDirections.ActionAddTransactionDetails action =
+                    AccountDetailsFragmentDirections.actionAddTransactionDetails(account);
+
+            navController.navigate(action);
+        });
+
+        accountViewModel.getException().observe(getViewLifecycleOwner(), exception -> {
+            Toast.makeText(getContext(), getString(R.string.warning_text), Toast.LENGTH_SHORT).show();
+            Log.e(TAG, "onActivityCreated: ", exception);
         });
     }
 }
