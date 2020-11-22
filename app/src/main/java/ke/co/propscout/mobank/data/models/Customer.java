@@ -4,7 +4,6 @@ import com.google.firebase.firestore.DocumentId;
 import com.google.firebase.firestore.Exclude;
 
 import java.io.Serializable;
-import java.util.List;
 
 public class Customer extends CustomerWithOwner implements Serializable {
 
@@ -17,16 +16,16 @@ public class Customer extends CustomerWithOwner implements Serializable {
     private String name;
     private String phone;
     private String idNumber;
-
-    private List<Account> accounts;
+    private String ownerId;
 
     public Customer() {
     }
 
-    public Customer(String name, String phone, String idNumber) {
+    public Customer(String name, String phone, String idNumber, String ownerId) {
         this.name = name;
         this.phone = phone;
         this.idNumber = idNumber;
+        this.ownerId = ownerId;
     }
 
     public String getId() {
@@ -61,14 +60,12 @@ public class Customer extends CustomerWithOwner implements Serializable {
         this.idNumber = idNumber;
     }
 
-    @Exclude
-    public List<Account> getAccounts() {
-        return accounts;
+    @Override
+    public String getOwnerId() {
+        return ownerId;
     }
 
-    public void setAccounts(List<Account> accounts) {
-        this.accounts = accounts;
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
     }
-
-
 }

@@ -14,16 +14,18 @@ public class Transaction {
     private double amount;
     private String transactionId;
     private String description;
+    private String accountId;
 
     private Account account;
 
     public Transaction() {
     }
 
-    public Transaction(String type, double amount, String transactionId, String description) {
+    public Transaction(String type, double amount, String transactionId, String accountId, String description) {
         this.type = type;
         this.amount = amount;
         this.transactionId = transactionId;
+        this.accountId = accountId;
         this.description = description;
     }
 
@@ -74,5 +76,13 @@ public class Transaction {
 
     public void setAccount(Account account) {
         this.account = account;
+    }
+
+    public String getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
     }
 }

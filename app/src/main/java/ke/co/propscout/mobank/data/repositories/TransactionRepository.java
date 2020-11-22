@@ -5,15 +5,12 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.List;
 import java.util.Objects;
 
-import ke.co.propscout.mobank.data.models.Account;
-import ke.co.propscout.mobank.data.models.Customer;
 import ke.co.propscout.mobank.data.models.Transaction;
-import ke.co.propscout.mobank.data.models.User;
 
 public class TransactionRepository {
 
-    private TransactionCrudTaskListener listener;
-    private FirebaseFirestore firebaseFirestore;
+    private final TransactionCrudTaskListener listener;
+    private final FirebaseFirestore firebaseFirestore;
 
     public TransactionRepository(TransactionCrudTaskListener listener) {
         this.listener = listener;
@@ -22,12 +19,7 @@ public class TransactionRepository {
     }
 
     public void createTransaction(Transaction transaction) {
-        firebaseFirestore.collection(User.COLLECTION_NAME)
-                .document(transaction.getAccount().getCustomer().getOwnerId())
-                .collection(Customer.COLLECTION_NAME)
-                .document(transaction.getAccount().getCustomer().getId())
-                .collection(Account.COLLECTION_NAME)
-                .document(transaction.getAccount().getId())
+        firebaseFirestore
                 .collection(Transaction.COLLECTION_NAME)
                 .add(transaction)
                 .addOnCompleteListener(addAccountTask -> {

@@ -8,20 +8,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.NavDestination;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import java.util.Objects;
 
@@ -142,7 +140,6 @@ public class HomeActivity extends AppCompatActivity {
                         //Check is the user document is setup
                         if (!Objects.requireNonNull(getUserDocumentTask.getResult()).exists()) {
                             //Get the auth provider and setup the document
-
                             String email = currentUser.getEmail();
                             String displayName = currentUser.getDisplayName();
                             String phoneNumber = currentUser.getPhoneNumber();
@@ -154,6 +151,7 @@ public class HomeActivity extends AppCompatActivity {
                                     .addOnCompleteListener(setUserDocumentTask -> {
                                         if (setUserDocumentTask.isSuccessful()) {
                                             Toast.makeText(this, "User document initialized", Toast.LENGTH_SHORT).show();
+
                                         } else {
                                             Toast.makeText(this, getString(R.string.warning_text), Toast.LENGTH_SHORT).show();
                                             Log.e(TAG, "checkOrSetupUser: error initialing user document", getUserDocumentTask.getException());
@@ -161,7 +159,8 @@ public class HomeActivity extends AppCompatActivity {
                                     });
 
                         } else {
-                            Log.i(TAG, "checkOrSetupUser: user document already setup");
+                            User user = getUserDocumentTask.getResult().toObject(User.class);
+                            Log.i(TAG, "checkOrSetupUser: current user: " + user);
                         }
                     } else {
                         Toast.makeText(this, getString(R.string.warning_text), Toast.LENGTH_SHORT).show();

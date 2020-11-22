@@ -38,7 +38,6 @@ public class TransactionDetailsFragment extends Fragment {
     private TextInputEditText transactionAmountField;
     private TextInputEditText transactionIdField;
     private TextInputEditText transactionDescriptionField;
-    private RadioGroup transactionTypeRadioGroup;
     private RadioButton depositRadioButton;
     private RadioButton withdrawRadioButton;
 
@@ -87,7 +86,7 @@ public class TransactionDetailsFragment extends Fragment {
                     return;
                 }
 
-                Transaction transaction = new Transaction(transactionType.toString(), amount, transactionId, description);
+                Transaction transaction = new Transaction(transactionType.toString(), amount, transactionId, account.getId(), description);
 
                 viewModel.createTransaction(transaction);
 
@@ -99,7 +98,7 @@ public class TransactionDetailsFragment extends Fragment {
     }
 
     private void initExtraWidgets(View view) {
-        transactionTypeRadioGroup = view.findViewById(R.id.transaction_type_radio_group);
+        RadioGroup transactionTypeRadioGroup = view.findViewById(R.id.transaction_type_radio_group);
 
         transactionTypeRadioGroup.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == withdrawRadioButton.getId()) {

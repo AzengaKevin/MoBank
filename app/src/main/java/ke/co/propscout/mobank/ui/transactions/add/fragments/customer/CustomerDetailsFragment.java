@@ -19,6 +19,8 @@ import androidx.navigation.Navigation;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Objects;
 
 import ke.co.propscout.mobank.R;
@@ -47,12 +49,12 @@ public class CustomerDetailsFragment extends Fragment {
         firebaseAuth = FirebaseAuth.getInstance();
 
         platform = (Platform) requireArguments().getSerializable(Account.ACCOUNT_TYPE_ARG);
-        Log.i(TAG, "onCreate: platform = " + platform.toString());
+        Log.i(TAG, "onCreate: platform = " + Objects.requireNonNull(platform).toString());
 
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentCustomerDetailsBinding.inflate(inflater, container, false);
         return binding.getRoot();
@@ -87,7 +89,7 @@ public class CustomerDetailsFragment extends Fragment {
                 return;
             }
 
-            Customer customer = new Customer(name, phone, idNumber);
+            Customer customer = new Customer(name, phone, idNumber, Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid());
 
             viewModel.createCustomer(customer);
         });

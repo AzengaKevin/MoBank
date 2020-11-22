@@ -8,12 +8,11 @@ import java.util.Objects;
 import ke.co.propscout.mobank.data.models.Account;
 import ke.co.propscout.mobank.data.models.Customer;
 import ke.co.propscout.mobank.data.models.Platform;
-import ke.co.propscout.mobank.data.models.User;
 
 public class AccountRepository {
 
-    private FirebaseFirestore firebaseFirestore;
-    private AccountCrudTaskListener listener;
+    private final FirebaseFirestore firebaseFirestore;
+    private final AccountCrudTaskListener listener;
 
     public AccountRepository(AccountCrudTaskListener listener) {
         this.listener = listener;
@@ -23,10 +22,7 @@ public class AccountRepository {
     }
 
     public void createAccount(Account account) {
-        firebaseFirestore.collection(User.COLLECTION_NAME)
-                .document(account.getCustomer().getOwnerId())
-                .collection(Customer.COLLECTION_NAME)
-                .document(account.getCustomer().getId())
+        firebaseFirestore
                 .collection(Account.COLLECTION_NAME)
                 .add(account)
                 .addOnCompleteListener(addAccountTask -> {
@@ -36,7 +32,6 @@ public class AccountRepository {
                             listener.onAccountRetrieved(account);
                         }
                     } else {
-
                         if (listener != null) {
                             listener.onException(addAccountTask.getException());
                         }
@@ -45,10 +40,10 @@ public class AccountRepository {
     }
 
     public void readAccounts(Platform platform, Customer customer) {
-        firebaseFirestore.collection(User.COLLECTION_NAME)
-                .document(customer.getOwnerId()).collection(Customer.COLLECTION_NAME)
-                .document(customer.getId()).collection(Account.COLLECTION_NAME)
+        firebaseFirestore
+                .collection(Account.COLLECTION_NAME)
                 .whereEqualTo("type", platform.toString())
+                .whereEqualTo("customerId", customer.getId())
                 .get()
                 .addOnCompleteListener(readCustomersTask -> {
                     if (readCustomersTask.isSuccessful()) {
