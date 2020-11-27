@@ -5,12 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".ui.transactions.list.ListTransactionsFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/transactions_text"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
+    <TableLayout
+        android:id="@+id/transactions_table_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_transaction_fab"

@@ -5,6 +5,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TableRow;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -60,5 +62,25 @@ public class ListTransactionsFragment extends Fragment {
             navController.navigate(actionAddTransaction);
         });
 
+        TableRow tableRow = new TableRow(requireContext());
+
+        TextView nameTextView = new TextView(requireContext());
+        nameTextView.setText("Name");
+
+        TextView transactionIdTextView = new TextView(requireContext());
+        transactionIdTextView.setText("Transaction ID");
+
+        TextView transactionAmountTextView = new TextView(requireContext());
+        transactionAmountTextView.setText("Transaction Amount");
+
+        TextView transactionTimeTextView = new TextView(requireContext());
+        transactionTimeTextView.setText("Transaction Time");
+
+        tableRow.addView(nameTextView);
+        tableRow.addView(transactionIdTextView);
+        tableRow.addView(transactionAmountTextView);
+        tableRow.addView(transactionTimeTextView);
+
+        binding.transactionsTableLayout.addView(tableRow);
     }
 }
