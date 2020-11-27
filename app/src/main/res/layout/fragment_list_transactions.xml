@@ -5,10 +5,11 @@
     android:layout_height="match_parent"
     tools:context=".ui.transactions.list.ListTransactionsFragment">
 
-    <TableLayout
-        android:id="@+id/transactions_table_layout"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/transactions_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        tools:listitem="@layout/single_transaction_item" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_transaction_fab"
