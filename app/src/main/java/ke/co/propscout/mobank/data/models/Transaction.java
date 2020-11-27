@@ -2,6 +2,9 @@ package ke.co.propscout.mobank.data.models;
 
 import com.google.firebase.firestore.DocumentId;
 import com.google.firebase.firestore.Exclude;
+import com.google.firebase.firestore.ServerTimestamp;
+
+import java.util.Date;
 
 public class Transaction {
     @Exclude
@@ -16,17 +19,21 @@ public class Transaction {
     private String description;
     private String accountId;
 
+    @ServerTimestamp
+    private Date transactionDate;
+
     private Account account;
 
     public Transaction() {
     }
 
-    public Transaction(String type, double amount, String transactionId, String accountId, String description) {
+    public Transaction(String type, double amount, String transactionId, String accountId, String description, Date transactionDate) {
         this.type = type;
         this.amount = amount;
         this.transactionId = transactionId;
         this.accountId = accountId;
         this.description = description;
+        this.transactionDate = transactionDate;
     }
 
     public String getId() {
@@ -84,5 +91,13 @@ public class Transaction {
 
     public void setAccountId(String accountId) {
         this.accountId = accountId;
+    }
+
+    public Date getTransactionDate() {
+        return transactionDate;
+    }
+
+    public void setTransactionDate(Date transactionDate) {
+        this.transactionDate = transactionDate;
     }
 }

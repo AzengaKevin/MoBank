@@ -21,6 +21,9 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.time.Instant;
+import java.util.Date;
+
 import ke.co.propscout.mobank.R;
 import ke.co.propscout.mobank.data.models.Account;
 import ke.co.propscout.mobank.data.models.Transaction;
@@ -86,7 +89,7 @@ public class TransactionDetailsFragment extends Fragment {
                     return;
                 }
 
-                Transaction transaction = new Transaction(transactionType.toString(), amount, transactionId, account.getId(), description);
+                Transaction transaction = new Transaction(transactionType.toString(), amount, transactionId, account.getId(), description, Date.from(Instant.now()));
 
                 viewModel.createTransaction(transaction);
 
